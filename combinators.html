@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div p {
+            /*descendent combinator*/
+            background-color: aqua;
+        }
+
+        div>h1 {
+            /*child combinator*/
+            background-color: red;
+        }
+
+        h1+div {
+            float: right;
+            /* floats the elem to right*/
+            transform: rotate(45deg) scale(2, 2);
+
+        }
+
+        h1+div {
+            transition: rotate(90deg);
+        }
+
+        p+h2 {
+            /*immediate sibling combinator*/
+            background-color: aquamarine;
+        }
+
+        div~p {
+            /*general sibling combinator*/
+            font-family: cursive;
+        }
+
+        ul>li[class="a"] {
+            background-color: lightcoral;
+            display: block;
+        }
+
+        ul>li:nth-child(2n+1) {
+            border: 2px brown solid;
+        }
+
+        ul>li:nth-last-child(5) {
+            background-color: blueviolet;
+        }
+
+        li:nth-of-type(2n) {
+            background-color: bisque;
+        }
+
+        ul>li:first-of-type {
+            background-color: cadetblue;
+        }
+
+        p:only-child {
+            background-color: yellowgreen;
+        }
+
+        :not(p) {
+            text-justify: newspaper;
+        }
+
+        p>.span1 {
+            display: inline-block;
+            border: 2px solid rebeccapurple;
+            background-color: aqua;
+        }
+
+        p>.span2 {
+            display: block;
+            border: 2px solid rebeccapurple;
+            background-color: aqua;
+            /* height: 10;
+            width: 100; */
+        }
+
+        .hide {
+            visibility: hidden;
+        }
+
+        .show {
+            visibility: visible;
+
+        }
+
+        input[type="number"]:out-of-range {
+            /*out of range selector */
+            border: 3px solid red;
+        }
+
+        nav.navigation {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        nav.navigation ul {
+            list-style: none;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        nav.navigation ul li {
+            background: linear-gradient(violet, red);
+            display: inline-block;
+        }
+
+        nav.navigation ul li a {
+            display: block;
+            float: left;
+            padding: 3px 6px;
+            color: #575c7d;
+            font-size: 22px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav.navigation ul li a:hover {
+            background: #ccc;
+            color: #fff;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            padding: 3px 6px;
+            margin: 0;
+            text-decoration: none;
+        }
+        #anim {
+            animation: homeAnimation 10s infinite;
+        }
+        @keyframes homeAnimation {
+            0% {background: red; left: 0px; top: 0px}
+            25% {background: green; right: 0px; top: 0px}
+            50% {background: blue; right: 0px; bottom: 0px}
+            75% {background: green; left: 0px; bottom: 0px}
+            
+            100% {background: red; left: 0px; top: 0px}
+            
+        }
+        </style>
+</head>
+
+<body>
+    <div id="anim">Welcome to simple animation</div>
+    <header id="header">
+        <nav class="navigation">
+            <ul>
+                <li><a href="./site.html">Home</a></li>
+                <li><a href="./video.html">Videos</a></li>
+                <li><a href="./audio.html">Audios</a></li>
+                <li><a href="./images.html">Images</a></li>
+                <li><a href="./rainbow.html">Logo</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div>
+        <h1>hello child combinator</h1>
+        <section>
+            <p>Hello descendent combinator</p>
+        </section>
+    </div>
+    <p>hello non descendent</p>
+    <h1>hello non descendent</h1>
+    <div>
+        <h1>hello child combinator</h1>
+
+        <p>Hello descendent combinator</p>
+    </div>
+    <p>sample para</p>
+    <h2>
+        Adjacent sibling combinator
+    </h2>
+    <p>another para - general sibling combinator</p>
+    <ul>
+        <li class="a"> class a </li>
+        <li>not class a</li>
+        <li class="a"> class a </li>
+        <li class="a"> class a </li>
+        <li class="a"> class a </li>
+        <li>not class a</li>
+        <li>not class a</li>
+        <li>not class a</li>
+        <li>not class a</li>
+        <li>not class a</li>
+        <li>not class a</li>
+        <li>not class a</li>
+        <li>not class a</li>
+        <li>not class a</li>
+        <li>not class a</li>
+        <li>not class a</li>
+        <li>not class a</li>
+        <li>not class a</li>
+        <li>not class a</li>
+
+    </ul>
+    <p>this is wrriten in html5.
+        <span class="span1">trying out
+            display:inline-block</span> outside span.
+    </p>
+    <p>this is wrriten in html5.
+        <span class="span2">trying out
+            display:inline-block</span> outside span.
+    </p>
+    <p class="hide">Hidden paragraph</p>
+    <p class="show">Visible paragraph</p>
+    <input type="number" min="10" max="20" value="25">
+</body>
+
+</html>
